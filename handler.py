@@ -4,18 +4,16 @@ import pandas as pd
 from flask             import Flask, request, Response
 from rossmann.Rossmann import Rossmann
 
-print('teste1')
 # loading model
 model = pickle.load(open ('model/model_rossman.pkl', 'rb'))
-print('teste2')
+
 
 # initialize API
 app = Flask(__name__)
-print('teste3')
 
-@app.route('/')
-def test_status():
-    return {'status': 'ok'}
+# @app.route('/')
+# def test_status():
+#     return {'status': 'ok'}
 
 @app.route('/rossmann/predict', methods=['POST'])
 
