@@ -12,6 +12,11 @@ print('teste2')
 # initialize API
 app = Flask(__name__)
 print('teste3')
+
+@app.route('/')
+def test_status():
+    return {'status': 'ok'}
+
 @app.route('/rossmann/predict', methods=['POST'])
 
 def rossman_predict():
